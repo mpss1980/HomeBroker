@@ -1,0 +1,61 @@
+###
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+    "name": "McDonalds",
+    "symbol": "MCD",
+    "price": 600,
+    "image": "MCD.png"
+}
+
+###
+GET http://localhost:3000/assets
+
+###
+GET http://localhost:3000/assets/A1
+
+###
+POST http://localhost:3000/wallets
+
+###
+GET http://localhost:3000/wallets
+
+###
+GET http://localhost:3000/wallets/2009ffa1-d7ac-4142-a6e7-e64ea579f4db
+
+###
+POST http://localhost:3000/wallets/2009ffa1-d7ac-4142-a6e7-e64ea579f4db/assets
+Content-Type: application/json
+
+{
+  "assetId": "d03d6cd2-aeb0-4e0a-b356-3f0c43c47176",
+  "shares": 2
+}
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "walletId": "fc81dcc8-97fc-4ae0-adf0-beab46f64bd1",
+  "assetId": "3c1abdd3-1a8e-4fd6-a833-66cc91eb4414",
+  "shares": 10,
+  "price": 100,
+  "type": "BUY"
+}
+
+###
+GET http://localhost:3000/orders?walletId=16600ca7-4699-43d4-888a-7966b0f4dc64
+
+###
+POST http://localhost:3000/assets/MCD/dailies
+Content-Type: application/json
+
+{
+  "date": "2025-1-11",
+  "price": 110
+}
+
+###
+GET http://localhost:3000/assets/MCD/dailies
